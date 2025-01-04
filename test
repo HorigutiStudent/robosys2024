@@ -60,7 +60,7 @@ out=$( execute "" )
 [ "$?" = 1 ] || ng "$LINENO"
 
 #ハイフンが全角文字
-out=$( test_script １．０ー１０ )
+out=$( execute １．０ー１０ )
 [ "$?" = 1 ] || ng "$LINENO"  
 
 [ "$res" = 0 ] && echo 'OK'

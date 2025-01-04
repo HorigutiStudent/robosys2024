@@ -61,7 +61,6 @@ class ParceInputData:
         #入力値をハイフン(-)を区切りに分別
         pattern = pattern = r"(\d+\.\d+|\d+)-(\d+\.\d+|\d+)"
         match = re.search(pattern,self.input_data)
-        
         if match:
             n1 = match.group(1)
             n2 = match.group(2)
