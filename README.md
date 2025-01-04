@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) \
 <img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat"> 
 
-任意の範囲の乱数を入手するコマンド
+任意の範囲の乱数を出力するコマンド
 
 ## テスト済み環境
 ### Local
@@ -22,7 +22,7 @@
 
 ## Installation
 ```sh
-git clone https://github.com/HorigutiStudent/robosys2024_death.git
+git clone https://github.com/HorigutiStudent/robosys2024.git
 ```
 ## Usage
 ```sh 
