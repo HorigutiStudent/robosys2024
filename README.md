@@ -20,7 +20,7 @@
 - Python 
     - version: 3.7 ~ 3.10
 
-## Installation
+## Download
 ```sh
 #リポジトリをクローン
 git clone https://github.com/HorigutiStudent/robosys2024.git
