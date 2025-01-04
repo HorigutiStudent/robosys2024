@@ -31,9 +31,7 @@ out=$( execute 1.0-10.0 )
 out=$( execute 1.0-10 )
 [ "$?" = 0 ] || ng "$LINENO" 
 
-#全角数字
-out=$( execute １．０-１０ )
-[ "$?" = 0 ] || ng "$LINENO" 
+
 
 #(左>右)
 out=$( execute 10-1.0 )
@@ -67,6 +65,9 @@ out=$( execute １．０ー１０ )
 out=$( execute 1.0-10.0.0 )
 [ "$?" = 1 ] || ng "$LINENO"
 
+#全角数字
+out=$( execute １．０-１０ )
+[ "$?" = 1 ] || ng "$LINENO" 
 
 [ "$res" = 0 ] && echo 'OK'
 
