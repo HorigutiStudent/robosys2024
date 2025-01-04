@@ -22,6 +22,7 @@
 
 ## Installation
 ```sh
+#リポジトリをクローン
 git clone https://github.com/HorigutiStudent/robosys2024.git
 ```
 ## Usage
@@ -34,12 +35,10 @@ echo "数値-数値" | ./random
 #### Examples
 ```sh
 #1から5の間でランダムなInt型の値を出力
-echo 1-5 | ./random   
-#3
+echo 1-5 | ./random   #3
 
 #1から10の間でランダムなFloat型の値を出力
-echo 10.0-1 | ./random
-#7.271700553301291
+echo 10.0-1 | ./random  #7.271700553301291
 ```
 
 ## LICENSE

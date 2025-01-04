@@ -23,16 +23,13 @@ class ParceInputData:
 
   
     def get_data(self) -> str:
+        """コマンドラインからの入力を読み取る"""
         self.input_data = sys.stdin.read().strip()
         return self.__split() 
 
 
     def get_type(self,values:tuple[str,str]) -> Type:
-        """
-        今回はfloat型を使うか否かを判断する
-        valuesはget_dataの返り値をそのまま入力
-        入力のうち片方が小数点を含んでいればfloat型を使う
-        """
+        """Float型を使うかInt型を使うかを判断"""
         for val in values:
             if '.' in val:
               return Type.FLOAT
@@ -41,6 +38,7 @@ class ParceInputData:
       
       
     def to_num(self,strs:list[str,str],type:Type=Type.INT) -> list:
+        """文字列から数値に変換"""
         inputs = []
         for num in strs:
             if type == Type.INT:
@@ -58,8 +56,9 @@ class ParceInputData:
       
       
     def __split(self) -> list[str,str]:
-        #入力値をハイフン(-)を区切りに分別
-        pattern = pattern = r"(\d+\.\d+|\d+)-(\d+\.\d+|\d+)"
+        """入力を欲しい形へ変形する"""
+        #正規表現を使ってハイフン(-)で分割
+        pattern = r"(-?\d+\.\d+|-?\d+)-(-?\d+\.\d+|-?\d+)"
         match = re.search(pattern,self.input_data)
         if match:
             n1 = match.group(1)
