@@ -61,7 +61,12 @@ out=$( execute "" )
 
 #ハイフンが全角文字
 out=$( execute １．０ー１０ )
-[ "$?" = 1 ] || ng "$LINENO"  
+[ "$?" = 1 ] || ng "$LINENO" 
+ 
+#小数点を誤って複数設ける
+out=$( execute 1.0-10.0.0 )
+[ "$?" = 1 ] || ng "$LINENO"
+
 
 [ "$res" = 0 ] && echo 'OK'
 

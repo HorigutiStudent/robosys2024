@@ -58,11 +58,12 @@ class ParceInputData:
     def __split(self) -> list[str,str]:
         """入力を欲しい形へ変形する"""
         #正規表現を使ってハイフン(-)で分割
-        pattern = r"(-?\d+\.\d+|-?\d+)-(-?\d+\.\d+|-?\d+)"
+        pattern = r"^-?(\d+(\.\d+)?)-(-?\d+(\.\d+)?)$"
+        # pattern = r"(-?\d+\.\d+|-?\d+)-(-?\d+\.\d+|-?\d+)"
         match = re.search(pattern,self.input_data)
         if match:
             n1 = match.group(1)
-            n2 = match.group(2)
+            n2 = match.group(3)
         else:
             raise ValueError("Input value is invalid")
         
