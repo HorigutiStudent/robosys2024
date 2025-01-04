@@ -27,16 +27,19 @@ git clone https://github.com/HorigutiStudent/robosys2024_death.git
 ## Usage
 ```sh 
 cd robosys2024  
-echo "最小値-最大値" | ./random
+echo "数値-数値" | ./random
 ```
-
-最小値・最大値には整数値を入力する。
+二つの数値の間からランダムな値を出力する.  \
+両方の数値が整数の場合出力はInt型、 数値のうちいずれかに小数を含む場合は、float型の値を返す.
 #### Examples
 ```sh
-#1から5までの中からランダムな値を取得する
+#1から5までの中からランダムなInt型の値を取得する
 echo 1-5 | ./random   
-
 #3
+
+#1から10までの中からランダムなFloat型の値を取得する
+echo 10.0-1 | ./random
+#7.271700553301291
 ```
 
 ## LICENSE
