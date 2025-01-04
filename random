@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+# SPDX-FileCopyrightText: 2025 Horiguchi Masahumi 
+# SPDX-License-Identifier: MIT
+
+from new_command.parce_input_data import ParceInputData
+from new_command.generate import Generate
+if __name__ == "__main__":
+    parceinputdata = ParceInputData()
+    generate = Generate()
+    
+    input_data = parceinputdata.get_data()
+    types = parceinputdata.get_type(input_data)
+    min,max = parceinputdata.to_num(input_data,types)
+    value = generate.execute(min,max,types)
+    
+    print(value)
