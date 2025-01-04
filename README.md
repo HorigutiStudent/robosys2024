@@ -3,7 +3,7 @@
 # random コマンド
 ![test](https://github.com/HorigutiStudent/robosys2024/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) \
-<img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat"> \
+<img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat"> 
 
 任意の範囲の乱数を入手するコマンド
 
