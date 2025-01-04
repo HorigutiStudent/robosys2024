@@ -49,6 +49,11 @@ class ParceInputData:
                 inputs.append(float(num))
             else:
                 raise KeyError(f"the type {type} is unexpected")
+        #最大・最小値が逆に入力されても対応できるようにした
+        if inputs[0] > inputs[1]:
+            min = inputs[1]
+            max = inputs[0]
+            inputs = [min,max]
         return inputs
       
       

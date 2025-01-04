@@ -1,0 +1,68 @@
+#!/bin/bash
+
+ng () {
+	echo "${1} failed"
+	res=1
+}
+
+#一定時間経過後にスクリプトを終了する関数を実装
+# test_script () {
+# 	timeout 5s sh -c "
+#     echo ${1} | xvfb-run -a ./get_menues 
+# 	"
+# }
+
+#関数を使いまわせるようにする
+execute () {
+  echo ${1} | ./random
+}
+res=0
+
+#予定通りの入力で正しく動作するか確認する
+#整数-整数
+out=$( execute 1-10 )
+[ "$?" = 0 ] || ng "$LINENO" 
+
+#小数-小数
+out=$( execute 1.0-10.0 )
+[ "$?" = 0 ] || ng "$LINENO" 
+
+#小数-整数
+out=$( execute 1.0-10 )
+[ "$?" = 0 ] || ng "$LINENO" 
+
+#全角数字
+out=$( execute １．０-１０ )
+[ "$?" = 0 ] || ng "$LINENO" 
+
+#(左>右)
+out=$( execute 10-1.0 )
+[ "$?" = 0 ] || ng "$LINENO" 
+
+
+##想定外の入力でエラーを吐くか確認する
+# 文字列の入力
+out=$( execute aa )
+[ "$?" = 1 ] || ng "$LINENO" 
+out=$( execute あ )
+[ "$?" = 1 ] || ng "$LINENO" 
+
+# スペルミス
+out=$( execute 1 -10 )
+[ "$?" = 1 ] || ng "$LINENO" 
+
+#ハイフン忘れ
+out=$( execute 110 )
+[ "$?" = 1 ] || ng "$LINENO"
+
+#入力された文字がないとき
+out=$( execute "" )
+[ "$?" = 1 ] || ng "$LINENO"
+
+#ハイフンが全角文字
+out=$( test_script １．０ー１０ )
+[ "$?" = 1 ] || ng "$LINENO"  
+
+[ "$res" = 0 ] && echo 'OK'
+
+exit $res
