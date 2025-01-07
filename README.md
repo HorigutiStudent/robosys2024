@@ -7,18 +7,6 @@
 
 任意の範囲の乱数を出力するコマンド
 
-## テスト済み環境
-### Local
-- Linux OS
-    - Ubuntu 22.04
-- Python
-    - version:  3.10.12    
-
-### GitHubActions
-- Linux OS
-    - Ubuntu 22.04
-- Python 
-    - version: 3.7 ~ 3.10
 
 ## Download
 ```sh
@@ -40,6 +28,18 @@ echo 1-5 | ./random   #3
 #1から10の間でランダムなFloat型の値を出力
 echo 10.0-1 | ./random  #7.271700553301291
 ```
+## テスト済み環境
+### Local
+- Linux OS
+    - Ubuntu 22.04
+- Python
+    - version:  3.10.12    
+
+### GitHubActions
+- Linux OS
+    - Ubuntu 22.04
+- Python 
+    - version: 3.7 ~ 3.10
 
 ## LICENSE
 - このソフトウェアパッケージは，MITライセンスの下，再頒布および使用が許可される. \

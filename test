@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2025 Horiguchi Masahumi 
+# SPDX-License-Identifier: MIT
+
 ng () {
 	echo "${1} failed"
 	res=1
